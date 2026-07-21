@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agenda — CRM Agêntico Empresa X</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-page="agenda">
+  <div class="app-shell" id="shell-root">
+    <div class="main-area">
+      <div id="topbar-root"></div>
+
+      <div class="page-header">
+        <div>
+          <div class="type-h1">Agenda</div>
+          <div class="type-body-sm">Integrada ao Outlook — a IA prepara cada reunião automaticamente.</div>
+        </div>
+        <div class="page-header-actions">
+          <button class="btn btn-ai btn-sm" id="simulate-meeting-mode-btn">🧪 Simular reunião em 15 min</button>
+        </div>
+      </div>
+
+      <main class="page-content">
+        <div id="agenda-home-root"></div>
+
+        <div class="agenda-layout">
+          <aside class="agenda-mini-sidebar">
+            <div>
+              <div class="type-h3">Calendários</div>
+              <div class="agenda-calendar-list" id="agenda-calendar-toggles"></div>
+            </div>
+            <div>
+              <div class="type-h3">Favoritos</div>
+              <div id="agenda-favorites-root"></div>
+            </div>
+          </aside>
+
+          <div class="agenda-main">
+            <div class="agenda-view-header">
+              <div class="segmented" id="agenda-view-segmented"></div>
+              <div class="flex items-center gap-3">
+                <button class="btn btn-secondary btn-sm" id="agenda-nav-prev">← Anterior</button>
+                <span class="type-body-sm" id="agenda-nav-label" style="min-width:170px; text-align:center;"></span>
+                <button class="btn btn-secondary btn-sm" id="agenda-nav-next">Próximo →</button>
+                <button class="btn btn-ghost btn-sm" id="agenda-nav-today">Hoje</button>
+              </div>
+            </div>
+            <div id="agenda-view-root"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/ai-engine.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/agenda.js"></script>
+  <script src="js/captura.js"></script>
+  <script>initShell();</script>
+</body>
+</html>
