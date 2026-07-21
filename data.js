@@ -2041,7 +2041,7 @@ const COMMITMENT_CONCLUDE_OPTIONS = [
 const COMMITMENTS = [
   {
     id: "co01", clientId: "c05", title: "Enviar apresentação do Corporate Plus",
-    dueOffsetDays: -2, impact: "alto", responsavel: "Rodrigo Lima",
+    dueOffsetDays: -2, impact: "alto", responsavel: "Rodrigo Lima", responsibility: "minha_acao", stage: "novas",
     origin: { type: "reuniao", label: "Reunião realizada em 05/07" },
     aiSummary: "Identifiquei durante a reunião que foi assumido o compromisso de enviar a apresentação comercial até sexta-feira.",
     detail: {
@@ -2054,7 +2054,7 @@ const COMMITMENTS = [
   },
   {
     id: "co02", clientId: "c01", title: "Enviar simulação de estruturação de dívida",
-    dueOffsetDays: 0, impact: "alto", responsavel: MANAGER.name,
+    dueOffsetDays: 0, impact: "alto", responsavel: MANAGER.name, responsibility: "minha_acao", stage: "em_andamento",
     origin: { type: "email", label: "E-mail recebido" },
     aiSummary: "O cliente perguntou por e-mail: \"Vocês podem enviar uma simulação até sexta?\" — registrei o compromisso com prazo para hoje.",
     detail: {
@@ -2067,7 +2067,7 @@ const COMMITMENTS = [
   },
   {
     id: "co03", clientId: "c11", title: "Retomar contato em 30 dias",
-    dueOffsetDays: 6, impact: "medio", responsavel: MANAGER.name,
+    dueOffsetDays: 6, impact: "medio", responsavel: MANAGER.name, responsibility: "monitorando", stage: "em_acompanhamento",
     origin: { type: "reuniao", label: "Reunião realizada em 01/07" },
     aiSummary: "Ao final da reunião ficou combinado: \"Voltamos a conversar daqui a 30 dias.\" — criei o compromisso com o prazo indicado.",
     detail: {
@@ -2080,7 +2080,7 @@ const COMMITMENTS = [
   },
   {
     id: "co04", clientId: "c04", title: "Enviar apresentação do produto Capital de Giro",
-    dueOffsetDays: 1, impact: "alto", responsavel: MANAGER.name,
+    dueOffsetDays: 1, impact: "alto", responsavel: MANAGER.name, responsibility: "minha_acao", stage: "em_andamento",
     origin: { type: "teams", label: "Conversa no Teams" },
     aiSummary: "No Teams, o cliente pediu: \"Pode me enviar a apresentação do produto?\" — registrei o material solicitado como compromisso.",
     detail: {
@@ -2093,7 +2093,7 @@ const COMMITMENTS = [
   },
   {
     id: "co05", clientId: "c08", title: "Finalizar proposta de Crédito CAPEX",
-    dueOffsetDays: 3, impact: "alto", responsavel: MANAGER.name,
+    dueOffsetDays: 3, impact: "alto", responsavel: MANAGER.name, responsibility: "minha_acao", stage: "em_andamento",
     origin: { type: "reuniao", label: "Reunião realizada em 06/07" },
     aiSummary: "Ficou acordado em reunião: \"Vamos finalizar isso até sexta-feira.\" — criei o compromisso com o prazo combinado.",
     detail: {
@@ -2106,7 +2106,7 @@ const COMMITMENTS = [
   },
   {
     id: "co06", clientId: "c07", title: "Aguardar documentação para renovação de limite",
-    dueOffsetDays: -5, impact: "medio", responsavel: MANAGER.name,
+    dueOffsetDays: -5, impact: "medio", responsavel: MANAGER.name, responsibility: "aguardando_cliente", stage: "dependencias", dependencyLabel: "Cliente",
     origin: { type: "email", label: "E-mail recebido" },
     aiSummary: "O e-mail registrava: \"Ficamos aguardando a documentação.\" — criei o compromisso de cobrar o documento pendente.",
     detail: {
@@ -2119,7 +2119,7 @@ const COMMITMENTS = [
   },
   {
     id: "co07", clientId: "c13", title: "Agendar reunião com Diretor Financeiro sobre consórcio",
-    dueOffsetDays: 2, impact: "medio", responsavel: MANAGER.name,
+    dueOffsetDays: 2, impact: "medio", responsavel: MANAGER.name, responsibility: "minha_acao", stage: "novas",
     origin: { type: "teams", label: "Conversa no Teams" },
     aiSummary: "Durante a conversa no Teams o cliente sinalizou interesse em avançar com o consórcio — registrei o próximo passo como compromisso.",
     detail: {
@@ -2132,7 +2132,7 @@ const COMMITMENTS = [
   },
   {
     id: "co08", clientId: "c06", title: "Enviar contrato de hedge cambial revisado",
-    dueOffsetDays: 0, impact: "medio", responsavel: MANAGER.name,
+    dueOffsetDays: 0, impact: "medio", responsavel: MANAGER.name, responsibility: "minha_acao", stage: "em_andamento",
     origin: { type: "email", label: "E-mail recebido" },
     aiSummary: "O cliente pediu por e-mail a revisão do contrato de hedge cambial ainda hoje — registrei como compromisso com prazo para hoje.",
     detail: {
@@ -2145,7 +2145,7 @@ const COMMITMENTS = [
   },
   {
     id: "co09", clientId: "c03", title: "Retornar contato sobre seguro garantia",
-    dueOffsetDays: -1, impact: "alto", responsavel: MANAGER.name,
+    dueOffsetDays: -1, impact: "alto", responsavel: MANAGER.name, responsibility: "minha_acao", stage: "novas",
     origin: { type: "reuniao", label: "Reunião realizada em 04/07" },
     aiSummary: "Ficou combinado retornar o contato assim que a pendência documental do seguro garantia fosse resolvida — o prazo já venceu.",
     detail: {
@@ -2154,6 +2154,19 @@ const COMMITMENTS = [
       historico: "Oportunidade de Seguro Garantia com 78% de probabilidade, ligada ao novo contrato público vencido pelo cliente.",
       impactoRelacionamento: "Cliente já insatisfeito com o processo anterior — um segundo atraso pode comprometer a oportunidade de vez.",
       riscos: "Perder o prazo do processo licitatório do cliente, que exige a apólice para seguir com a obra."
+    }
+  },
+  {
+    id: "co10", clientId: "c08", title: "Aguardar aprovação do Comitê de Crédito para o CAPEX",
+    dueOffsetDays: 4, impact: "alto", responsavel: MANAGER.name, responsibility: "aguardando_area_interna", stage: "dependencias", dependencyLabel: "Comitê de Crédito",
+    origin: { type: "reuniao", label: "Reunião realizada em 06/07" },
+    aiSummary: "A proposta de Crédito CAPEX já foi finalizada e está formalmente submetida ao Comitê de Crédito interno — o próximo passo depende da aprovação da área, não de uma ação sua.",
+    detail: {
+      resumoInteracao: "Após finalizar a proposta de Crédito CAPEX para a nova planta de processamento, o processo foi encaminhado ao Comitê de Crédito para análise de risco e aprovação de limite.",
+      participantes: ["Antônio Vilela (Diretor Financeiro)", "Comitê de Crédito"],
+      historico: "Segue a mesma oportunidade de Crédito CAPEX de R$ 3,2 mi já em análise.",
+      impactoRelacionamento: "Cliente em recuperação de NPS após reclamação de demora — importante avisar o cliente assim que o Comitê responder.",
+      riscos: "Se o Comitê demorar além do esperado, o cliente pode voltar a perceber lentidão no processo."
     }
   }
 ];
@@ -2195,6 +2208,34 @@ function commitmentBucket(c) {
 function getCommitments() {
   const done = getCommitmentDoneMap();
   return getAllCommitmentsRaw().map(c => ({ ...c, bucket: commitmentBucket(c), done: !!done[c.id] }));
+}
+
+/* Responsabilidade pela próxima ação de um compromisso (RFC-007) —
+   quem precisa agir agora: eu, o cliente, ou uma área interna do
+   banco. A partir da RFC-007-A deixou de ser usada como coluna do
+   Kanban e passou a ser só uma informação exibida dentro do card
+   ("Dependência atual") — por isso não tem mais override manual. */
+function commitmentResponsibility(c) {
+  return c.responsibility || "minha_acao";
+}
+
+/* Etapa do ciclo de vida da Missão (RFC-007-A) — organiza o Kanban
+   de Pendências. Autorada por compromisso, com override manual via
+   drag-and-drop guardado no navegador — mesmo padrão de
+   commitmentBucket()/getCommitmentDoneMap(). A etapa "concluida" não
+   passa por aqui: continua vindo exclusivamente do fluxo real de
+   conclusão (commitmentBucket() === "concluido"). */
+function getCommitmentStageOverrides() {
+  return JSON.parse(localStorage.getItem("crm-commitments-stage") || "{}");
+}
+function setCommitmentStageOverride(id, stage) {
+  const map = getCommitmentStageOverrides();
+  map[id] = stage;
+  localStorage.setItem("crm-commitments-stage", JSON.stringify(map));
+}
+function commitmentStage(c) {
+  const overrides = getCommitmentStageOverrides();
+  return overrides[c.id] || c.stage || "novas";
 }
 
 function concludeCommitment(id, outcomeId) {

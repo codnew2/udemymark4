@@ -53,7 +53,8 @@ const DEMO_STATE_KEYS = [
   "crm-feed-dismissed", "crm-meeting-draft", "crm-meeting-registered",
   "crm-mission-done", "crm-pipeline-stage", "crm-planning-suggestions",
   "crm-proactive-dismissed", "crm-commitments-done", "crm-commitments-extra",
-  "crm-agenda-view", "crm-agenda-calendars", "crm-meeting-mode-dismissed", "crm-agenda-favorites"
+  "crm-agenda-view", "crm-agenda-calendars", "crm-meeting-mode-dismissed", "crm-agenda-favorites",
+  "crm-commitments-stage"
 ];
 
 function resetDemoState() {

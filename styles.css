@@ -492,6 +492,10 @@ a.card:hover, .card.actionable:hover { box-shadow: var(--shadow-md); transform: 
 .kanban-card { background: var(--bg-surface); border-radius: var(--radius-md); padding: var(--space-3); border: 1px solid var(--border-default); box-shadow: var(--shadow-sm); cursor: grab; }
 .kanban-card.dragging { opacity: 0.5; }
 .kanban-column.drag-over .kanban-cards { background: var(--ai-accent-bg); border-radius: var(--radius-sm); }
+/* Reaproveitado pelo Kanban de Pendências (RFC-007), cujo card
+   arrastável é o .card.ai-block já existente, não o .kanban-card. */
+.kanban-cards [draggable="true"] { cursor: grab; }
+.kanban-cards .dragging { opacity: 0.5; }
 
 /* ============================================================
    Painel de Revisão de Rascunho / Draft
