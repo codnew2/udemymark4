@@ -9,7 +9,7 @@ const NAV_ITEMS = [
   { key: "radar", label: "Carteira", icon: "◎", href: "radar.html" },
   { key: "agenda", label: "Agenda", icon: "🗓", href: "agenda.html" },
   { key: "pipeline", label: "Oportunidades", icon: "💡", href: "pipeline.html" },
-  { key: "compromissos", label: "Pendências", icon: "🎯", href: "compromissos.html" },
+  { key: "compromissos", label: "Missões", icon: "🎯", href: "compromissos.html" },
   { key: "planning", label: "Planning", icon: "📋", href: "planning.html" },
   { key: "resumo", label: "Resumo Executivo", icon: "📊", href: "resumo.html" },
   { key: "nps", label: "NPS", icon: "★", href: "nps.html" },
@@ -54,7 +54,7 @@ const DEMO_STATE_KEYS = [
   "crm-mission-done", "crm-pipeline-stage", "crm-planning-suggestions",
   "crm-proactive-dismissed", "crm-commitments-done", "crm-commitments-extra",
   "crm-agenda-view", "crm-agenda-calendars", "crm-meeting-mode-dismissed", "crm-agenda-favorites",
-  "crm-commitments-stage"
+  "crm-commitments-stage", "crm-commitments-history"
 ];
 
 function resetDemoState() {

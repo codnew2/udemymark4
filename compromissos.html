@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pendências — CRM Agêntico Empresa X</title>
+<title>Missões — CRM Agêntico Empresa X</title>
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body data-page="compromissos">
@@ -13,10 +13,11 @@
 
       <div class="page-header">
         <div>
-          <div class="type-h1">Pendências</div>
-          <div class="type-body-sm">O que foi combinado com o cliente e ainda precisa ser cumprido.</div>
+          <div class="type-h1">Missões</div>
+          <div class="type-body-sm">Objetivos comerciais em andamento com o cliente — a evolução do relacionamento, não uma lista de tarefas.</div>
         </div>
         <div class="page-header-actions">
+          <button class="btn btn-ai btn-sm" id="prioritize-missions-btn">✦ Priorizar automaticamente</button>
           <div class="segmented" id="commitments-segmented">
             <button data-view="etapa" class="active">Por Etapa</button>
             <button data-view="cliente">Por Cliente</button>
@@ -25,6 +26,7 @@
       </div>
 
       <main class="page-content">
+        <div id="missions-home-root"></div>
         <div class="card-grid" id="commitments-summary-root" style="margin-bottom: var(--space-6);"></div>
         <div id="commitments-view-root"></div>
       </main>

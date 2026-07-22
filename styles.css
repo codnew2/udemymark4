@@ -662,6 +662,7 @@ a.card:hover, .card.actionable:hover { box-shadow: var(--shadow-md); transform: 
 .mt-1 { margin-top: var(--space-1); } .mt-2 { margin-top: var(--space-2); } .mt-3 { margin-top: var(--space-3); }
 .mt-4 { margin-top: var(--space-4); } .mt-5 { margin-top: var(--space-5); } .mt-6 { margin-top: var(--space-6); } .mt-8 { margin-top: var(--space-8); }
 .mb-2 { margin-bottom: var(--space-2); } .mb-3 { margin-bottom: var(--space-3); } .mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); } .mb-8 { margin-bottom: var(--space-8); }
 .text-secondary { color: var(--text-secondary); }
 .text-tertiary { color: var(--text-tertiary); }
 .text-critical { color: var(--state-critical); }
@@ -742,21 +743,21 @@ a.card:hover, .card.actionable:hover { box-shadow: var(--shadow-md); transform: 
 .influence-node .influence-role { font-size: var(--type-caption-size); color: var(--text-secondary); }
 
 /* Painel lateral de contato — Análise Completa (clone visual do ai-drawer) */
-.contact-drawer-scrim, .commitment-drawer-scrim, .objective-drawer-scrim { position: fixed; inset: 0; background: rgba(10,10,15,0.4); z-index: 150; opacity: 0; pointer-events: none; transition: opacity var(--duration-slow) var(--ease-standard); }
-.contact-drawer-scrim.open, .commitment-drawer-scrim.open, .objective-drawer-scrim.open { opacity: 1; pointer-events: auto; }
-.contact-drawer, .commitment-drawer, .objective-drawer {
+.contact-drawer-scrim, .commitment-drawer-scrim, .objective-drawer-scrim, .mission-evolution-drawer-scrim { position: fixed; inset: 0; background: rgba(10,10,15,0.4); z-index: 150; opacity: 0; pointer-events: none; transition: opacity var(--duration-slow) var(--ease-standard); }
+.contact-drawer-scrim.open, .commitment-drawer-scrim.open, .objective-drawer-scrim.open, .mission-evolution-drawer-scrim.open { opacity: 1; pointer-events: auto; }
+.contact-drawer, .commitment-drawer, .objective-drawer, .mission-evolution-drawer {
   position: fixed; top: 0; right: 0; bottom: 0; width: 440px; max-width: 92vw;
   background: var(--bg-surface); box-shadow: var(--shadow-lg); z-index: 160;
   display: flex; flex-direction: column; transform: translateX(100%);
   transition: transform var(--duration-slow) var(--ease-standard);
 }
-.contact-drawer.open, .commitment-drawer.open, .objective-drawer.open { transform: translateX(0); }
+.contact-drawer.open, .commitment-drawer.open, .objective-drawer.open, .mission-evolution-drawer.open { transform: translateX(0); }
 @media (max-width: 767px) {
-  .contact-drawer, .commitment-drawer, .objective-drawer { width: 100vw; max-width: 100vw; top: auto; height: 92vh; border-radius: var(--radius-xl) var(--radius-xl) 0 0; transform: translateY(100%); }
-  .contact-drawer.open, .commitment-drawer.open, .objective-drawer.open { transform: translateY(0); }
+  .contact-drawer, .commitment-drawer, .objective-drawer, .mission-evolution-drawer { width: 100vw; max-width: 100vw; top: auto; height: 92vh; border-radius: var(--radius-xl) var(--radius-xl) 0 0; transform: translateY(100%); }
+  .contact-drawer.open, .commitment-drawer.open, .objective-drawer.open, .mission-evolution-drawer.open { transform: translateY(0); }
 }
-.contact-drawer-header, .commitment-drawer-header, .objective-drawer-header { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--border-default); flex-shrink: 0; }
-.contact-drawer-body, .commitment-drawer-body, .objective-drawer-body { flex: 1; overflow-y: auto; padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-6); }
+.contact-drawer-header, .commitment-drawer-header, .objective-drawer-header, .mission-evolution-drawer-header { display: flex; align-items: center; justify-content: space-between; padding: var(--space-4) var(--space-5); border-bottom: 1px solid var(--border-default); flex-shrink: 0; }
+.contact-drawer-body, .commitment-drawer-body, .objective-drawer-body, .mission-evolution-drawer-body { flex: 1; overflow-y: auto; padding: var(--space-5); display: flex; flex-direction: column; gap: var(--space-6); }
 .contact-drawer-section .type-h3, .commitment-drawer-section .type-h3, .objective-drawer-section .type-h3 { margin-bottom: var(--space-3); }
 .hypothesis-note { font-size: var(--type-caption-size); color: var(--text-tertiary); margin-top: var(--space-2); }
 
