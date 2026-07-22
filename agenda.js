@@ -521,7 +521,6 @@ function renderMeetingPanelBody(m) {
   const participants = getMeetingParticipants(m);
   const commitments = getCommitments().filter(c => c.clientId === client.id && c.bucket !== "concluido");
   const objective = client.planning.objectives[0];
-  const readingSeconds = Math.max(20, Math.round(m.title.length / 2));
 
   return `
     <div>
@@ -539,7 +538,6 @@ function renderMeetingPanelBody(m) {
       <div class="ai-badge mb-2"><span class="spark">✦</span> Briefing Executivo</div>
       <div class="type-h3">${m.title}</div>
       <p class="type-body-sm mt-1">${rec.text}</p>
-      <div class="type-caption mt-2">Tempo estimado de leitura: ${readingSeconds}s</div>
     </div>
 
     <div class="meeting-panel-section">
@@ -566,7 +564,7 @@ function renderMeetingPanelBody(m) {
     </div>
 
     <div class="meeting-panel-section">
-      <div class="type-h3">Missões e Pendências relacionadas</div>
+      <div class="type-h3">Pendências</div>
       ${commitments.length ? commitments.map(c => `<div class="type-body-sm mt-1">🎯 ${c.title} — ${meetingCommitmentDueLabel(c)}</div>`).join("") : `<div class="type-body-sm text-secondary">Nenhuma pendência em aberto para este cliente.</div>`}
       <a href="compromissos.html" class="type-caption mt-2" style="display:block;">Ver Pendências →</a>
     </div>
@@ -601,6 +599,7 @@ function renderMeetingPanelBody(m) {
       <p class="type-body-sm" style="color:var(--text-primary);">${m.strategySuggestion}</p>
     </div>
 
+    <!--
     <div class="meeting-panel-section">
       <div class="type-h3">Ações rápidas</div>
       <div class="meeting-quick-actions">
@@ -612,6 +611,7 @@ function renderMeetingPanelBody(m) {
         <button class="btn btn-secondary btn-sm" data-toast="E-mail simulado enviado.">📧 Enviar E-mail</button>
       </div>
     </div>
+    -->
 
     ${m.status === "concluida" ? `
       <div class="meeting-panel-section">
@@ -777,7 +777,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("agenda-nav-prev").addEventListener("click", () => navStep(-1));
   document.getElementById("agenda-nav-next").addEventListener("click", () => navStep(1));
   document.getElementById("agenda-nav-today").addEventListener("click", () => { agendaAnchorDate = new Date(); renderCurrentView(); });
-  document.getElementById("simulate-meeting-mode-btn").addEventListener("click", simulateMeetingMode);
+  // document.getElementById("simulate-meeting-mode-btn").addEventListener("click", simulateMeetingMode);
 
   checkMeetingMode();
 });
